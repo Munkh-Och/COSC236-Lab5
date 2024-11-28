@@ -28,9 +28,10 @@ public class Member {
 		BorrowingService borrowingService = new BorrowingService();  
 		boolean success = borrowingService.borrowBook(this, book); if(success) 
 		{ 
-			// print something 
+			System.out.println("Member has successfully borrowed the book ");
 		} else { 
 			// print something else 
+			System.out.println("Member hasn't been able to borrow the book ");
 		}
 	}
 
@@ -39,12 +40,13 @@ public class Member {
 		boolean success = borrowingService.returnBook(this, book); if(success) 
 		{ 
 			// print something 
+			System.out.println("Member has successfully returned the book ");
 		} else { 
 			// print something else 
+			System.out.println("Member hasn't been able to return the book ");
 		} 
 	} 
-	// other things .... 
-
+	
 
 	public void listBorrowedBooks() {
 		for (Book book : borrowedBooks)

@@ -27,7 +27,6 @@ public class BorrowingService implements BorrowingServiceAPI {
 			return true; // Return true for success 
 		}
 		
-		System.out.println("Member doesn't have that book");
 		return false;
 	}
 }
