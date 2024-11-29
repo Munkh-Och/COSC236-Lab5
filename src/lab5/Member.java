@@ -31,19 +31,21 @@ public class Member {
 
 	public void borrowBook(Book book) {
 		BorrowingService borrowingService = new BorrowingService();
-		boolean success = borrowingService.borrowBook(this, book);
-		if (success) {
-			System.out.println(name + " has successfully borrowed the book " + book);
+		BorrowingBookResult success = borrowingService.borrowBook(this, book);
+		if (success.getSuccessStatus() == true) {
+			System.out.println("Success: " + success.getSuccessStatus() + 
+					": " + success.getBorrowingMessage()); 
 		} else {
 			// print something else
-			System.out.println(name + " hasn't been able to borrow the book " + book);
+			System.out.println("Faliure: " + success.getSuccessStatus() + 
+					": " + success.getBorrowingMessage()); 
 		}
 	}
 
 	public void returnBook(Book book) {
 		BorrowingService borrowingService = new BorrowingService();
-		boolean success = borrowingService.returnBook(this, book);
-		if (success) {
+		BorrowingBookResult success = borrowingService.returnBook(this, book);
+		if (success.getSuccessStatus() == true) {
 			// print something
 			System.out.println(name + " has successfully returned the book " + book);
 		} else {
