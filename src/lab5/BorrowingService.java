@@ -1,10 +1,15 @@
 package lab5;
 
 public class BorrowingService implements BorrowingServiceAPI {
-	// TODO: Implement methods for borrowing 
+	// DONE: Implement methods for borrowing 
 	// and returning Books 
-
-	private int borrowingLimit = 3;
+	
+	private static BorrowingService instance;
+	private int borrowingLimit;
+	
+	private BorrowingService() {
+		borrowingLimit = 3;
+	}
 
 	@Override 
 	public BorrowingBookResult borrowBook(Member member, Book book) { 
@@ -39,5 +44,15 @@ public class BorrowingService implements BorrowingServiceAPI {
 		member.getBorrowedBooks().remove(book);
 		book.setIsAvailable(true);
 		return success;
+	}
+	
+	public static BorrowingService getInstance() {
+		//TODO
+		//Implement Singleton Pattern
+		if(instance == null) {
+			instance = new BorrowingService();
+		}
+		
+		return instance;
 	}
 }

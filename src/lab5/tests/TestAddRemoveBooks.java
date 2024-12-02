@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import lab5.Book;
+import lab5.BorrowingService;
 import lab5.EBook;
 import lab5.Library;
 import lab5.PaperBook;
@@ -17,6 +18,7 @@ import lab5.Member;
 class TestAddRemoveBooks {
 	
 	private Library library;
+	BorrowingService service;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -28,7 +30,7 @@ class TestAddRemoveBooks {
 	Book book3 = new EBook("Moby Dick");
 	
 	
-	Member member = new Member("Grady Booch");
+	Member member = new Member("Grady Booch", service);
 	
 	@Test
 	void AddBooks() {
