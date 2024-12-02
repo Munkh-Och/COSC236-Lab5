@@ -22,6 +22,7 @@ class TestAddRemoveBooks {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		 this.service = service.getInstance();
 		 this.library = new Library(); // empty library for each test
 	}
 

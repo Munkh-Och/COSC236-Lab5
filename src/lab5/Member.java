@@ -13,7 +13,7 @@ public class Member {
 	public Member(String name, BorrowingService service) {
 		this.name = name;
 		this.borrowedBooks = new ArrayList<>();
-		this.borrowingService = service;
+		this.borrowingService = service.getInstance();
 	}
 
 	public String getName() {
