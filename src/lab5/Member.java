@@ -14,7 +14,6 @@ public class Member {
 		this.name = name;
 		this.borrowedBooks = new ArrayList<>();
 		this.borrowingService = service;
-	
 	}
 
 	public String getName() {
@@ -38,7 +37,7 @@ public class Member {
 	}
 
 	public BorrowingBookResult returnBook(Book book) {
-		return borrowingService.returnBook(null, book);
+		return borrowingService.returnBook(this, book);
 	}
 	
 	
